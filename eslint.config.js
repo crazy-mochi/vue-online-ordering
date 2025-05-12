@@ -24,3 +24,12 @@ export default defineConfig([
   ...pluginVue.configs['flat/essential'],
   skipFormatting,
 ])
+
+//避免沒使用的變數造成無法存檔
+module.exports = {
+  extends: ['plugin:vue/vue3-recommended'],
+  rules: {
+    'no-unused-vars': 'off', // 全部關掉 (或)
+    'vue/script-setup-uses-vars': 'error', // 告訴 eslint template 中會用到
+  },
+}
