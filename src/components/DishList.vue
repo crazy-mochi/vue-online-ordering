@@ -2,19 +2,18 @@
 const emit = defineEmits(['open-modal'])
 
 const props = defineProps({
-  name: String,
-  price: Number,
+  item: Object,
 })
 
 function handleClick() {
-  emit('open-modal', { name: props.name, price: props.price })
+  emit('open-modal', props.item)
 }
 </script>
 <template>
   <div class="item-container" @click="handleClick">
     <div class="item-info">
-      <h3>{{ name }}</h3>
-      <p>${{ price }}</p>
+      <h3>{{ item.name }}</h3>
+      <p>${{ item.price }}</p>
     </div>
     <div class="item-img"></div>
   </div>

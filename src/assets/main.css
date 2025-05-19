@@ -32,13 +32,13 @@ main {
 }
 
 .ordering-wrapper {
-  padding: 12px;
+  padding: 8px 12px 72px 12px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
-  background: rgb(237, 236, 236);
+  background: hsl(0, 0%, 95%);
 }
 
 header {
@@ -52,7 +52,7 @@ header .shop-banner {
   aspect-ratio: 4/3;
   width: 100%;
   margin-top: 8px;
-  background: rgb(185, 185, 185);
+  background: hsl(0, 0%, 70%);
   border-radius: 8px;
 }
 
@@ -73,7 +73,7 @@ header .shop-banner {
 }
 .item-container:hover {
   cursor: pointer;
-  background-color: rgb(196, 196, 196);
+  background: hsl(0, 0%, 80%);
 }
 .item-container .item-info {
   height: 100%;
@@ -91,7 +91,21 @@ header .shop-banner {
   aspect-ratio: 1/1;
   height: 100%;
   border-radius: 8px;
-  background: rgb(168, 168, 168);
+  background: hsl(0, 0%, 70%);
+}
+
+.back-btn {
+  aspect-ratio: 1/1;
+  width: 2.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  background: none;
+}
+.back-btn:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgb(228, 228, 228);
 }
 
 .product-modal {
@@ -119,26 +133,13 @@ header .shop-banner {
   height: 85vh;
   overflow-y: auto;
   border-radius: 16px 16px 0 0;
-  background: rgb(237, 236, 236);
+  background: hsl(0, 0%, 95%);
 }
 .product-modal .modal-background .product-content .product-img {
   aspect-ratio: 4/3;
   width: 100%;
-  background: rgb(185, 185, 185);
+  background: hsl(0, 0%, 70%);
   border-radius: 8px;
-}
-.product-modal .modal-background .product-content .back {
-  aspect-ratio: 1/1;
-  width: 2.5rem;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  border: none;
-  background: none;
-}
-.product-modal .modal-background .product-content .back:hover {
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: rgb(228, 228, 228);
 }
 .product-modal .modal-background .product-content h3 {
   font-size: 2rem;
@@ -146,12 +147,55 @@ header .shop-banner {
 .product-modal .modal-background .product-content p {
   font-size: 1.5rem;
 }
-.product-modal .modal-background .add-to-cart {
-  position: fixed;
+.product-modal .modal-background .product-content .count-container {
+  width: 100%;
+  padding: 56px 0 120px 0;
+  display: flex;
+  justify-content: center;
+}
+.product-modal .modal-background .product-content .count-container .btn {
+  color: hsl(0, 0%, 30%);
+  padding: 4px 10px;
+  border: 1px solid hsl(0, 0%, 30%);
+  cursor: pointer;
+}
+.product-modal .modal-background .product-content .count-container .add {
+  border-radius: 0 6px 6px 0;
+}
+.product-modal .modal-background .product-content .count-container .reduce {
+  border-radius: 6px 0 0 6px;
+}
+.product-modal .modal-background .product-content .count-container .number {
+  width: 5rem;
+  border-top: 1px solid hsl(0, 0%, 30%);
+  border-bottom: 1px solid hsl(0, 0%, 30%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-modal .modal-background .add-to-cart-container {
   width: 100%;
   max-width: 480px;
+  padding: 10px 12px;
   border: none;
-  background: none;
+  background: rgb(248, 248, 248);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-modal .modal-background .add-to-cart-container .add-to-cart {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  background: hsl(0, 0%, 80%);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.product-modal .modal-background .add-to-cart-container .add-to-cart h3 {
+  font-weight: 400;
+  padding: 4px;
 }
 
 .bottom-fixed {
@@ -161,43 +205,71 @@ header .shop-banner {
   display: flex;
   justify-content: center;
 }
-
-.cart-bar {
+.bottom-fixed .cart-bar {
   padding: 8px 24px 8px 16px;
   width: 100%;
   max-width: 480px;
-  background: rgb(248, 248, 248);
+  background: hsl(0, 0%, 98%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
-.cart-bar .total-price {
+.bottom-fixed .cart-bar .total-price {
   padding: 4px 12px;
 }
-.cart-bar .total-price h4 {
-  color: rgb(129, 129, 129);
+.bottom-fixed .cart-bar .total-price h4 {
+  color: hsl(0, 0%, 50%);
   font-size: 16px;
   font-weight: 400;
 }
-.cart-bar .total-price span {
+.bottom-fixed .cart-bar .total-price span {
   font-size: 20px;
 }
-.cart-bar .cart {
+.bottom-fixed .cart-bar .cart {
   padding: 12px 12px;
   font-size: 18px;
-  background: rgba(196, 196, 196, 0.918);
+  background: hsl(0, 0%, 80%);
   border-radius: 4px;
   cursor: pointer;
 }
-.cart-bar .cart span {
-  background: rgb(243, 243, 243);
+.bottom-fixed .cart-bar .cart span {
+  background: hsl(0, 0%, 98%);
   padding: 6px 8px;
   border-radius: 2px;
 }
 
+.detail-modal {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  min-height: 80vh;
+  background: hsl(0, 0%, 95%);
+  border: 1px solid hsl(0, 0%, 30%);
+  border-radius: 8px 8px 0 0;
+}
+.detail-modal .test {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.detail-modal .test div {
+  display: flex;
+  gap: 1rem;
+}
+.detail-modal .test div span {
+  cursor: pointer;
+  padding: 0 8px;
+}
+.detail-modal .test button {
+  width: 30px;
+  height: 30px;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .item-container:hover {
-    background-color: rgb(196, 196, 196);
+    background: hsl(0, 0%, 80%);
   }
 }/*# sourceMappingURL=main.css.map */
